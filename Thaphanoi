@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+void Thaphanoi(int n, char from, char to, char trunggian) {
+  if(n == 0) {
+    return;
+  }
+  Thaphanoi(n - 1, from, trunggian, to);
+  cout << "Disk " << n << " moved from " << from << " to " << to << endl;
+Thaphanoi(n - 1, trunggian, to, from);
+}
+
+int main() {
+  int n;
+  cin >> n;
+ Thaphanoi(n, 'A', 'C', 'B');
+  return 0;
+}
